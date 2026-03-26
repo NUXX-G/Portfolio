@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nelson Filipe Fardilha Karlsson">
+    <title>D&D 5e | Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img src="imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp" alt="Logo D&D">
+            <p>D&D 5e Character Creator</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="activo">Inicio</a></li>
+                <li><a href="html/creador.html">Creador de Personaje</a></li>
+                <li><a href="html/sobreMi.html">Sobre Mi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div>
+            <h1>D&D es basicamente esto:</h1>
+            <p>Tu y tus amigos os sentais, uno hace de Dios y narra la historia, y el resto haceis de heroes que intentan no morir. Quieres atacar a un dragon? Tiras un dado. Quieres convencer al guardia de que eres el rey? Tiras un dado. Quieres abrir una puerta? Adivina.</p>
+            <a href="html/creador.html" class="boton">Crear Personaje</a>
+        </div>
+
+        <div class="info">
+            <h2>Recursos de referencia</h2>
+            <p>Consulta el manual oficial y el video de introduccion antes de crear tu personaje o no ;).</p>
+            <a href="recursos/D&D5Manual.pdf" download class="boton">Descargar Manual</a>
+            <br>
+            <video controls autoplay loop muted>
+                <source src="recursos/Video_tutorial_D&D.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <h3>Puntuaciones de Habilidad</h3>
+                <p>Todo personaje tiene 6 estadisticas que dicen lo bueno que eres en cada cosa.</p>
+                <ul>
+                    <li><strong>Fuerza:</strong> Que tan fuerte eres, sirve para golpear y cargar cosas</li>
+                    <li><strong>Destreza:</strong> Que tan rapido y agil eres, sirve para esquivar y sigilo</li>
+                    <li><strong>Constitucion:</strong> Tu resistencia, cuantos golpes aguantas</li>
+                    <li><strong>Inteligencia:</strong> Que tan listo eres, sirve para magia arcana y conocimiento</li>
+                    <li><strong>Sabiduria:</strong> Tu instinto y percepcion, sirve para magia divina</li>
+                    <li><strong>Carisma:</strong> Tu labia y personalidad, sirve para convencer a la gente</li>
+                </ul>
+                <img src="imagenes/SoyMuyFuerte.webp" alt="Si, madre, soy lo suficiente fuerte">
+            </div>
+
+            <div class="tarjeta">
+                <h3>Razas</h3>
+                <p>De donde viene tu personaje, cada raza te da ventajas distintas.</p>
+                <ul>
+                    <li><strong>Humano:</strong> El mas versatil, sube todos los atributos un poco</li>
+                    <li><strong>Elfo:</strong> Agil y con buena percepcion, muy buenos con la magia</li>
+                    <li><strong>Enano:</strong> Duros y resistentes, perfectos para el combate</li>
+                    <li><strong>Mediano:</strong> Pequeños y sigilosos, tienen mucha suerte</li>
+                    <li><strong>Draconido:</strong> Tienen sangre de dragon y pueden lanzar un aliento elemental</li>
+                    <li><strong>Gnomo:</strong> Muy inteligentes e inventivos, con algo de magia innata</li>
+                    <li><strong>Semiorco:</strong> Fuertes y feroces, aguantan mucho en combate</li>
+                    <li><strong>Tiefling:</strong> Tienen linaje infernal y resisten el fuego</li>
+                </ul>
+                <img src="imagenes/enano_meme.webp" alt="Pequeño pero con musculos de acero">
+            </div>
+
+            <div class="tarjeta">
+                <h3>Clases</h3>
+                <p>La profesion de tu personaje, lo que sabe hacer mejor.</p>
+                <ul>
+                    <li><strong>Barbaro:</strong> Entra en furia y es imparable en combate</li>
+                    <li><strong>Bardo:</strong> Usa la musica y el arte para lanzar magia y ayudar al grupo</li>
+                    <li><strong>Clerigo:</strong> Sirve a un dios, cura a los aliados y puede hacer mucho daño</li>
+                    <li><strong>Druida:</strong> Controla la naturaleza y puede convertirse en animales</li>
+                    <li><strong>Guerrero:</strong> El mejor en combate, domina todo tipo de armas y armaduras</li>
+                    <li><strong>Monje:</strong> Lucha sin armas usando su energia interior</li>
+                    <li><strong>Paladin:</strong> Guerrero con poderes sagrados que jura defender una causa</li>
+                    <li><strong>Explorador:</strong> Cazador y rastreador, letal en su terreno</li>
+                    <li><strong>Picaro:</strong> Sigiloso y trampeador, ataca cuando el enemigo no lo ve</li>
+                    <li><strong>Hechicero:</strong> Nacio con magia en la sangre, no necesita estudiarla</li>
+                    <li><strong>Brujo:</strong> Hizo un pacto con un ser poderoso a cambio de magia</li>
+                    <li><strong>Mago:</strong> Estudio magia durante años, conoce los conjuros mas potentes</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Puntos de Golpe</h3>
+                <p>Tu vida en el juego. Si llegan a 0 caes inconsciente y puedes morir.</p>
+                <ul>
+                    <li><strong>Barbaro:</strong> d12, el que mas golpes aguanta</li>
+                    <li><strong>Guerrero y Paladin:</strong> d10, muy resistentes</li>
+                    <li><strong>Clerigo, Druida y Monje:</strong> d8, aguantan bien</li>
+                    <li><strong>Picaro, Bardo y Hechicero:</strong> d8, aguantan bien</li>
+                    <li><strong>Mago y Brujo:</strong> d6, los mas fragiles pero con magia muy potente</li>
+                </ul>
+                <img src="imagenes/Yhorm_the_Giant.jpg" alt="Este señor esta muy duro">
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Desarrollado por <strong>Nelson Filipe Fardilha Karlsson</strong> — C.F.G.S. Desarrollo de Aplicaciones Multiplataforma</p>
+        <p>Datos obtenidos de <a href="https://www.dnd5eapi.co/" target="_blank">D&D 5e API</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

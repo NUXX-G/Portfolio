@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nelson Filipe Fardilha Karlsson">
+    <title>Creador de Personaje | D&D 5e</title>
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script> <!--Necesito usar esta libreria si o si, debido a la tarea adicional que me pusistes de modificar el pdf con los datos-->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img src="../imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp" alt="Logo D&D">
+            <p>D&D 5e Character Creator</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="creador.html" class="activo">Creador de Personaje</a></li>
+                <li><a href="sobreMi.html">Sobre Mi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div>
+            <h1>Crea tu Personaje</h1>
+            <p>Elige raza y clase para ver tu ficha.</p>
+        </div>
+
+        <div class="creador">
+
+            <div class="formulario">
+                <label for="input-nombre">Nombre</label>
+                <input type="text" id="input-nombre" placeholder="Nombre del personaje">
+                <label for="select-raza">Raza</label>
+                <select id="select-raza">
+                    <option value="">Cargando...</option>
+                </select>
+                <label for="select-clase">Clase</label>
+                <select id="select-clase">
+                    <option value="">Cargando...</option>
+                </select>
+                <label for="select-alineamiento">Alineamiento</label>
+                <select id="select-alineamiento">
+                    <option value="">Cargando...</option>
+                </select>
+                <button id="btn-generar">Generar Personaje</button>
+                <button id="btn-aleatorio">Aleatorio</button>
+                <button id="btn-plantilla">Descargar Plantilla</button>
+                <button id="btn-limpiar">Limpiar</button>   
+                <p id="contador-personajes">Personajes generados: 0</p>         
+            </div>
+
+            <div id="ficha-personaje" class="oculto"></div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Desarrollado por <strong>Nelson Filipe Fardilha Karlsson</strong> — C.F.G.S. Desarrollo de Aplicaciones Multiplataforma</p>
+        <p>Datos obtenidos de <a href="https://www.dnd5eapi.co/" target="_blank">D&D 5e API</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
