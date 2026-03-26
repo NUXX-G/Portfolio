@@ -1,4 +1,3 @@
-```markdown
 # Portfolio — Nelson Filipe Fardilha Karlsson
 
 Personal portfolio website. Minimalist design, bilingual (ES/EN), deployed on a personal VPS.
@@ -11,7 +10,6 @@ Personal portfolio website. Minimalist design, bilingual (ES/EN), deployed on a 
 - JetBrains Mono (Google Fonts)
 
 ## Structure
-
 ```
 portfolio/
 ├── index.html        # Main entry point
@@ -37,6 +35,3 @@ portfolio/
 
 **Nelson Filipe Fardilha Karlsson**
 [GitHub](https://github.com/NUXX-G) · [LinkedIn](https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/)
-```
-
-Pega esto, guarda y haz el push.
