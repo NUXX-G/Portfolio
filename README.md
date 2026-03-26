@@ -12,13 +12,13 @@ Personal portfolio website. Minimalist design, bilingual (ES/EN), deployed on a 
 ## Structure
 ```
 portfolio/
-├── index.html        # Main entry point
-├── style.css         # Global styles
+├── index.html       
+├── style.css         
 ├── js/
-│   └── main.js       # Language switch and interactions
-├── paginas/          # Additional pages
-├── demos/            # Project demos
-└── recursos/         # Assets and resources
+│   └── main.js       
+├── paginas/          
+├── demos/           
+└── recursos/        
 ```
 
 ## Features
@@ -34,4 +34,4 @@ portfolio/
 ## Author
 
 **Nelson Filipe Fardilha Karlsson**
-[GitHub](https://github.com/NUXX-G) · [LinkedIn](https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/)
+
