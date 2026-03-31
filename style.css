@@ -167,11 +167,6 @@ h1 em {
   gap: 0.6rem;
 }
 
-.hero-links {
-  display: flex;
-  gap: 0.6rem;
-}
-
 .link-outline {
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -288,6 +283,7 @@ h1 em {
 .project-btns {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .pbtn-demo {
@@ -322,6 +318,25 @@ h1 em {
 .pbtn-repo:hover {
   border-color: var(--muted);
   color: var(--text);
+}
+
+/* VIDEO BUTTON */
+.pbtn-video {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid rgba(122, 170, 200, 0.35);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pbtn-video:hover {
+  background: rgba(122, 170, 200, 0.1);
+  border-color: var(--blue);
+  color: #a8d4f0;
 }
 
 /* STACK */
