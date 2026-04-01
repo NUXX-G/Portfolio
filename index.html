@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nelson Filipe Fardilha Karlsson — Backend Developer basado en España. Java, Spring Boot, APIs REST." />
+  <meta name="description" content="Nelson Filipe Fardilha Karlsson — Backend Developer based in Spain. Java, Spring Boot, REST APIs." />
   <title>Nelson Filipe Fardilha Karlsson — Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,8 +21,8 @@
         <a href="#contact">contact</a>
       </div>
       <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLang('es')">ES</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
       </div>
     </div>
   </nav>
@@ -33,45 +33,84 @@
     <div class="hero">
       <div class="hero-left">
         <div>
-          <p class="hi" id="hi-text">// Hola, soy Nelson</p>
+          <p class="hi" id="hi-text">// Hi, I'm Nelson</p>
           <h1>Nelson Filipe<br><em>Fardilha Karlsson.</em></h1>
         </div>
         <div class="hero-links">
           <a class="link-outline" href="https://github.com/NUXX-G" target="_blank">GITHUB</a>
           <a class="link-fill" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">LINKEDIN</a>
         </div>
+        <div class="status-card">
+          <p class="status-card-title lang-en">Currently Building</p>
+          <p class="status-card-title lang-es hidden">Construyendo ahora</p>
+          <p class="status-card-subtitle lang-en">Java Backend Projects</p>
+          <p class="status-card-subtitle lang-es hidden">Proyectos Backend en Java</p>
+          <div class="status-rows">
+            <div class="status-row">
+              <p class="status-label">Auth &amp; Security</p>
+              <p class="status-value">Spring Security · JWT</p>
+            </div>
+            <div class="status-row">
+              <p class="status-label">Data Layer</p>
+              <p class="status-value">JPA · MySQL · REST APIs</p>
+            </div>
+            <div class="status-row">
+              <p class="status-label">Infrastructure</p>
+              <p class="status-value">Docker · VPS · Linux</p>
+            </div>
+            <div class="status-row">
+              <p class="status-label">Cloud</p>
+              <p class="status-value">AWS EC2 · S3 · VPC</p>
+            </div>
+          </div>
+          <div class="status-footer">
+            <p class="status-footer-label lang-en">Open to internships</p>
+            <p class="status-footer-label lang-es hidden">Abierto a prácticas</p>
+            <p class="status-available">● Available</p>
+          </div>
+        </div>
       </div>
 
       <div class="hero-right">
-        <div class="hero-about lang-es">
-          <p>Desarrollador en formación enfocado en backend, actualmente estudiando Desarrollo de Aplicaciones Multiplataforma (DAM) y buscando activamente oportunidades en backend.</p>          <p>Vengo de un grado medio en Sistemas Microinformáticos y Redes (SMR), donde pasé dos años trabajando con redes, servidores y sistemas operativos desde cero. Esa base es lo que me llevó al backend: antes de escribir código, ya entendía el entorno donde ese código vive y respira.</p>
+        <div class="hero-about lang-en">
+          <p>Backend-focused developer in training, currently studying Software Development (DAM) and actively looking for backend opportunities.</p>
+          <p>I come from a background in IT Systems &amp; Networking (SMR), where I spent two years working with networks, servers, and operating systems from the ground up. That's what naturally led me to backend development — I understood the environment where code runs before I even started writing it.</p>
+          <p>I enjoy building things out of pure curiosity. Not just using technology, but understanding how it works under the hood. I usually have some kind of side project going on, whether it's to explore a new tool, learn a technology, or just see how far I can push myself. For me, that's the best way to learn: by solving real problems, making mistakes, and improving.</p>
+          <p>I care about clean code, well-designed systems, and challenging problems that make you think. I learn fast, stay consistent, and adapt quickly to new environments. I'm looking for a team where I can contribute from day one, keep growing, and be surrounded by people who enjoy building things.</p>
+          <p>When I'm not coding, I'm probably gaming, watching anime, tinkering with hardware, or distro-hopping just out of curiosity.</p>
+          <p>Always running a side project.</p>
+        </div>
+        <div class="hero-about lang-es hidden">
+          <p>Desarrollador en formación enfocado en backend, actualmente estudiando Desarrollo de Aplicaciones Multiplataforma (DAM) y buscando activamente oportunidades en backend.</p>
+          <p>Vengo de un grado medio en Sistemas Microinformáticos y Redes (SMR), donde pasé dos años trabajando con redes, servidores y sistemas operativos desde cero. Esa base es lo que me llevó al backend: antes de escribir código, ya entendía el entorno donde ese código vive y respira.</p>
           <p>Me gusta construir cosas por pura curiosidad. No solo usar tecnología, sino entender cómo funciona por dentro. Suelo estar siempre con algún proyecto personal en marcha, ya sea para probar una herramienta nueva, aprender una tecnología o simplemente ver hasta dónde puedo llegar. Para mí, es la mejor forma de aprender: enfrentándome a problemas reales, equivocándome y mejorando.</p>
           <p>Valoro el código limpio, los sistemas bien pensados y los retos que te obligan a pensar. Aprendo rápido, soy constante y me adapto bien a entornos nuevos. Busco un equipo donde pueda aportar desde el principio, seguir creciendo y rodearme de gente que también disfrute construyendo cosas.</p>
           <p>Cuando no estoy programando, probablemente estoy jugando, viendo anime, trasteando con hardware o probando alguna distro nueva solo por curiosidad.</p>
           <p>Siempre con algún side project en marcha.</p>
         </div>
-        <div class="hero-about lang-en hidden">
-          <p>Backend-focused developer in training, currently studying Software Development (vocational) and actively looking for backend opportunities.</p>          <p>I come from a background in IT Systems & Networking (vocational degree), where I spent two years working with networks, servers, and operating systems from the ground up. That’s what naturally led me to backend development — I understood the environment where code runs before I even started writing it.</p>
-          <p>I enjoy building things out of pure curiosity. Not just using technology, but understanding how it works under the hood. I usually have some kind of side project going on, whether it's to explore a new tool, learn a technology, or just see how far I can push myself. For me, that’s the best way to learn: by solving real problems, making mistakes, and improving.</p>
-          <p>I care about clean code, well-designed systems, and challenging problems that make you think. I learn fast, stay consistent, and adapt quickly to new environments. I'm looking for a team where I can contribute from day one, keep growing, and be surrounded by people who enjoy building things.</p>
-          <p>When I’m not coding, I’m probably gaming, watching anime, tinkering with hardware, or distro-hopping just out of curiosity.</p>
-          <p>Always running a side project.</p>
-        </div>
       </div>
     </div>
 
-    <!-- PROJECTS -->
-    <div class="section" id="projects">
-      <h2 class="section-title"><em>// </em>PROJECTS</h2>
+    <!-- SCROLL ARROW -->
+    <div class="scroll-hint" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+      <p class="scroll-label lang-en">projects</p>
+      <p class="scroll-label lang-es hidden">proyectos</p>
+      <p class="scroll-arrow">▼</p>
+    </div>
 
-      <!-- savings-api -->
-      <div class="project">
+    <!-- PROJECTS -->
+    <div class="section section-projects" id="projects">
+      <div class="section-header">
+        <h2 class="section-title"><em>// </em>PROJECTS</h2>
+      </div>
+
+      <div class="project" data-project="savings-api">
         <div class="project-top">
           <p class="project-name">savings-api</p>
           <p class="project-status">wip</p>
         </div>
-        <p class="project-desc lang-es">App de ahorro personal multi-usuario. JWT auth con refresh tokens, metas de ahorro, historial de transacciones y notificaciones automáticas por email. Un proyecto que uso yo mismo.</p>
-        <p class="project-desc lang-en hidden">Multi-user personal savings app I actually use myself. JWT auth with refresh tokens, savings goals, transaction history and automatic email notifications.</p>
+        <p class="project-desc lang-en">Multi-user personal savings app I actually use myself. JWT auth with refresh tokens, savings goals, transaction history and automatic email notifications.</p>
+        <p class="project-desc lang-es hidden">App de ahorro personal multi-usuario que uso yo mismo. JWT auth con refresh tokens, metas de ahorro, historial de transacciones y notificaciones automáticas por email.</p>
         <div class="project-tags">
           <p class="ptag">Spring Boot</p>
           <p class="ptag">Spring Security</p>
@@ -81,20 +120,19 @@
         </div>
         <div class="project-btns">
           <a class="pbtn-demo" href="#" target="_blank">demo ↗</a>
-          <a class="pbtn-repo" href="https://github.com/NUXX-G" target="_blank">repo ↗</a>
-          <a class="pbtn-video lang-es" href="#" target="_blank">video ↗</a>
-          <a class="pbtn-video lang-en hidden" href="#" target="_blank">video ↗</a>
+          <a class="pbtn-repo" href="https://github.com/NUXX-G/Savings-App" target="_blank">repo ↗</a>
+          <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
+          <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
         </div>
       </div>
 
-      <!-- FitTrack -->
-      <div class="project">
+      <div class="project" data-project="fittrack">
         <div class="project-top">
           <p class="project-name">FitTrack</p>
           <p class="project-status">wip</p>
         </div>
-        <p class="project-desc lang-es">API REST de fitness y nutrición. Seguimiento de rutinas, ejercicios y macros. Sistema de ranking por grupo muscular inspirado en juegos competitivos. Análisis de técnica e identificación de alimentos mediante IA (Gemini API). Desarrollado junto a Petter5-5.</p>
-        <p class="project-desc lang-en hidden">Fitness and nutrition REST API. Track routines, exercises and macros. Muscle group ranking system inspired by competitive games. AI-powered technique analysis and food identification via Gemini API. Built with Petter5-5.</p>
+        <p class="project-desc lang-en">Fitness and nutrition REST API. Track routines, exercises and macros. Muscle group ranking system inspired by competitive games. AI-powered technique analysis and food identification via Gemini API. Built with Petter5-5.</p>
+        <p class="project-desc lang-es hidden">API REST de fitness y nutrición. Seguimiento de rutinas, ejercicios y macros. Sistema de ranking por grupo muscular inspirado en juegos competitivos. Análisis de técnica e identificación de alimentos mediante IA (Gemini API). Desarrollado junto a Petter5-5.</p>
         <div class="project-tags">
           <p class="ptag">Java 21</p>
           <p class="ptag">Spring Boot</p>
@@ -108,8 +146,46 @@
         <div class="project-btns">
           <a class="pbtn-demo" href="#" target="_blank">demo ↗</a>
           <a class="pbtn-repo" href="https://github.com/NUXX-G/Fittrack" target="_blank">repo ↗</a>
-          <a class="pbtn-video lang-es" href="#" target="_blank">video ↗</a>
-          <a class="pbtn-video lang-en hidden" href="#" target="_blank">video ↗</a>
+          <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
+          <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
+        </div>
+      </div>
+
+      <div class="project" data-project="juegorphg">
+        <div class="project-top">
+          <p class="project-name">JuegoRPG</p>
+          <p class="project-status">complete</p>
+        </div>
+        <p class="project-desc lang-en">Turn-based RPG with Swing GUI. Strategy Pattern for independent class combat behaviour, Template Method to share structure across character types without duplicating code. Persistent save system built with Java serialization.</p>
+        <p class="project-desc lang-es hidden">RPG por turnos con GUI en Swing. Strategy Pattern para el comportamiento de combate independiente por clase, Template Method para compartir estructura entre tipos de personaje sin duplicar código. Sistema de guardado persistente con serialización Java.</p>
+        <div class="project-tags">
+          <p class="ptag">Java 21</p>
+          <p class="ptag">Swing</p>
+          <p class="ptag">Strategy Pattern</p>
+          <p class="ptag">Template Method</p>
+        </div>
+        <div class="project-btns">
+          <a class="pbtn-repo" href="https://github.com/NUXX-G" target="_blank">repo ↗</a>
+          <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
+          <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
+        </div>
+      </div>
+
+      <!-- CTA CONTACT -->
+      <div class="projects-cta">
+        <div class="projects-cta-text">
+          <p class="lang-en">Interested in working together?</p>
+          <p class="lang-es hidden">¿Interesado en trabajar juntos?</p>
+        </div>
+        <div class="projects-cta-links">
+          <div class="cta-email" onclick="copyEmail()">
+            <p>nelson@nelsonffkarlsson.com</p>
+            <p class="cta-copy" id="cta-copy-label">copy ↗</p>
+          </div>
+          <a class="cta-linkedin" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">
+            <p class="lang-en">LinkedIn ↗</p>
+            <p class="lang-es hidden">LinkedIn ↗</p>
+          </a>
         </div>
       </div>
 
@@ -117,7 +193,9 @@
 
     <!-- STACK -->
     <div class="section" id="stack">
-      <h2 class="section-title"><em>// </em>STACK</h2>
+      <div class="section-header">
+        <h2 class="section-title"><em>// </em>STACK</h2>
+      </div>
 
       <div class="stack-group">
         <p class="stack-group-label">Languages</p>
@@ -136,10 +214,7 @@
           <p class="stag">MySQL</p>
           <p class="stag">JPA / Hibernate</p>
           <p class="stag">REST APIs</p>
-          <p class="stag">JWT</p>
           <p class="stag">SQL Server</p>
-          <p class="stag">JUnit5</p>
-          <p class="stag">OOP</p>
           <p class="stag">Maven</p>
           <p class="stag">Swagger</p>
         </div>
@@ -159,7 +234,8 @@
       </div>
 
       <div class="stack-group">
-        <p class="stack-group-label">Networking &amp; Systems — SMR</p>
+        <p class="stack-group-label lang-en">Networking &amp; Systems — SMR</p>
+        <p class="stack-group-label lang-es hidden">Redes y Sistemas — SMR</p>
         <div class="stack-row">
           <p class="stag">TCP/IP</p>
           <p class="stag">DNS</p>
@@ -169,8 +245,10 @@
           <p class="stag">Active Directory</p>
           <p class="stag">LAN/WAN</p>
           <p class="stag">Routing &amp; Switching</p>
-          <p class="stag">Virtualización</p>
-          <p class="stag">Montaje &amp; Hardware</p>
+          <p class="stag lang-en">Virtualization</p>
+          <p class="stag lang-es hidden">Virtualización</p>
+          <p class="stag lang-en">Assembly &amp; Hardware</p>
+          <p class="stag lang-es hidden">Montaje &amp; Hardware</p>
         </div>
       </div>
 
@@ -190,11 +268,13 @@
 
     <!-- CONTACT -->
     <div class="section" id="contact">
-      <h2 class="section-title"><em>// </em>CONTACT</h2>
-      <a class="contact-row" href="mailto:nelson@nelsonffkarlsson.com">
+      <div class="section-header">
+        <h2 class="section-title"><em>// </em>CONTACT</h2>
+      </div>
+      <div class="contact-row contact-email" onclick="copyEmail()">
         <p>nelson@nelsonffkarlsson.com</p>
-        <p class="contact-arrow">↗</p>
-      </a>
+        <p class="contact-copy" id="copy-label">copy ↗</p>
+      </div>
       <a class="contact-row" href="https://github.com/NUXX-G" target="_blank">
         <p>github.com/NUXX-G</p>
         <p class="contact-arrow">↗</p>
@@ -206,8 +286,9 @@
     </div>
 
     <footer>
-      <p>available for internships · Spain</p>
-      <p>© 2025 Nelson Filipe Fardilha Karlsson</p>
+      <p class="lang-en">available for internships · Spain</p>
+      <p class="lang-es hidden">disponible para prácticas · España</p>
+      <p>© 2026 Nelson Filipe Fardilha Karlsson</p>
     </footer>
 
   </div>

@@ -1,50 +1,60 @@
 // ─── VIDEO LINKS ───────────────────────────────────────────────
-// Rellena estos links cuando tengas los vídeos listos
 const VIDEO_LINKS = {
-  'savings-api': {
-    es: '#',   // <- pon aquí el link del vídeo en español de savings-api
-    en: '#'    // <- pon aquí el link del vídeo en inglés de savings-api
-  },
-  'fittrack': {
-    es: '#',   // <- pon aquí el link del vídeo en español de FitTrack
-    en: '#'    // <- pon aquí el link del vídeo en inglés de FitTrack
-  }
+  'savings-api': { es: '#', en: '#' },
+  'fittrack':    { es: '#', en: '#' },
+  'juegorphg':   { es: '#', en: '#' }
 };
 // ──────────────────────────────────────────────────────────────
 
-let currentLang = 'es';
+let currentLang = 'en';
 
 function setLang(lang) {
   currentLang = lang;
 
-  // Mostrar/ocultar bloques de idioma
   document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang !== 'en'));
   document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', lang !== 'es'));
 
-  // Botones de idioma activo
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
 
-  // Texto hero
   document.getElementById('hi-text').textContent = lang === 'es' ? '// Hola, soy Nelson' : "// Hi, I'm Nelson";
+  document.documentElement.lang = lang;
 
-  // Actualizar hrefs de los botones de vídeo
   updateVideoLinks(lang);
 }
 
 function updateVideoLinks(lang) {
-  // savings-api videos
-  const savingsVideoES = document.querySelector('.project:nth-child(1) .pbtn-video.lang-es');
-  const savingsVideoEN = document.querySelector('.project:nth-child(1) .pbtn-video.lang-en');
-  if (savingsVideoES) savingsVideoES.href = VIDEO_LINKS['savings-api'].es;
-  if (savingsVideoEN) savingsVideoEN.href = VIDEO_LINKS['savings-api'].en;
-
-  // fittrack videos
-  const fittrackVideoES = document.querySelector('.project:nth-child(2) .pbtn-video.lang-es');
-  const fittrackVideoEN = document.querySelector('.project:nth-child(2) .pbtn-video.lang-en');
-  if (fittrackVideoES) fittrackVideoES.href = VIDEO_LINKS['fittrack'].es;
-  if (fittrackVideoEN) fittrackVideoEN.href = VIDEO_LINKS['fittrack'].en;
+  document.querySelectorAll('.project[data-project]').forEach(project => {
+    const key = project.getAttribute('data-project');
+    if (!VIDEO_LINKS[key]) return;
+    const videoEN = project.querySelector('.pbtn-video.lang-en');
+    const videoES = project.querySelector('.pbtn-video.lang-es');
+    if (videoEN) videoEN.href = VIDEO_LINKS[key].en;
+    if (videoES) videoES.href = VIDEO_LINKS[key].es;
+  });
 }
 
-// Init
-updateVideoLinks('es');
+function copyEmail() {
+  const email = 'nelson@nelsonffkarlsson.com';
+
+  // Etiquetas en la sección contact y en el CTA de projects
+  const labels = [
+    document.getElementById('copy-label'),
+    document.getElementById('cta-copy-label')
+  ];
+
+  navigator.clipboard.writeText(email).then(() => {
+    labels.forEach(label => {
+      if (!label) return;
+      label.textContent = currentLang === 'es' ? 'copiado ✓' : 'copied ✓';
+      label.classList.add('copied');
+      setTimeout(() => {
+        label.textContent = 'copy ↗';
+        label.classList.remove('copied');
+      }, 2000);
+    });
+  });
+}
+
+// Init en inglés
+updateVideoLinks('en');
