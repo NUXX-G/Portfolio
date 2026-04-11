@@ -16,9 +16,10 @@
     <p class="nav-logo">NUXX</p>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="#projects">projects</a>
-        <a href="#stack">stack</a>
-        <a href="#contact">contact</a>
+        <a href="#hero" onclick="goTo(0)">home</a>
+        <a href="#projects" onclick="goTo(1)">projects</a>
+        <a href="#stack" onclick="goTo(2)">stack</a>
+        <a href="#contact" onclick="goTo(3)">contact</a>
       </div>
       <div class="lang-switch">
         <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -27,271 +28,287 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="bg-section bg-hero">
-    <div class="inner">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div>
+  <div class="scroll-dots">
+    <span class="dot active" onclick="goTo(0)"></span>
+    <span class="dot" onclick="goTo(1)"></span>
+    <span class="dot" onclick="goTo(2)"></span>
+    <span class="dot" onclick="goTo(3)"></span>
+  </div>
+
+  <div class="sections" id="sections">
+
+    <!-- 0 HERO -->
+    <section class="page" id="hero">
+      <div class="page-inner">
+        <div class="hero-grid">
+
+          <div class="hero-left">
             <p class="hi" id="hi-text">// Hi, I'm Nelson</p>
             <h1>Nelson Filipe<br><em>Fardilha Karlsson.</em></h1>
-          </div>
-          <div class="hero-links">
-            <a class="link-outline" href="https://github.com/NUXX-G" target="_blank">GITHUB</a>
-            <a class="link-fill" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">LINKEDIN</a>
-          </div>
-          <div class="status-card">
-            <p class="status-card-title lang-en">Currently Building</p>
-            <p class="status-card-title lang-es hidden">Construyendo ahora</p>
-            <p class="status-card-subtitle lang-en">Java Backend Projects</p>
-            <p class="status-card-subtitle lang-es hidden">Proyectos Backend en Java</p>
-            <div class="status-rows">
-              <div class="status-row">
-                <p class="status-label">Auth &amp; Security</p>
-                <p class="status-value">Spring Security · JWT</p>
+            <div class="hero-links">
+              <a class="link-outline" href="https://github.com/NUXX-G" target="_blank">GITHUB</a>
+              <a class="link-fill" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">LINKEDIN</a>
+            </div>
+            <div class="status-card">
+              <p class="status-card-title lang-en">Currently Building</p>
+              <p class="status-card-title lang-es hidden">Construyendo ahora</p>
+              <p class="status-card-subtitle lang-en">Java Backend Projects</p>
+              <p class="status-card-subtitle lang-es hidden">Proyectos Backend en Java</p>
+              <div class="status-rows">
+                <div class="status-row">
+                  <p class="status-label">Auth &amp; Security</p>
+                  <p class="status-value">Spring Security · JWT</p>
+                </div>
+                <div class="status-row">
+                  <p class="status-label">Data Layer</p>
+                  <p class="status-value">JPA · MySQL · REST APIs</p>
+                </div>
+                <div class="status-row">
+                  <p class="status-label">Infrastructure</p>
+                  <p class="status-value">Docker · VPS · Linux</p>
+                </div>
               </div>
-              <div class="status-row">
-                <p class="status-label">Data Layer</p>
-                <p class="status-value">JPA · MySQL · REST APIs</p>
-              </div>
-              <div class="status-row">
-                <p class="status-label">Infrastructure</p>
-                <p class="status-value">Docker · VPS · Linux</p>
-              </div>
-              <div class="status-row">
-                <p class="status-label">Cloud</p>
-                <p class="status-value">AWS EC2 · S3 · VPC</p>
+              <div class="status-footer">
+                <p class="status-footer-label lang-en">Open to internships</p>
+                <p class="status-footer-label lang-es hidden">Abierto a prácticas</p>
+                <p class="status-available">● Available</p>
               </div>
             </div>
-            <div class="status-footer">
-              <p class="status-footer-label lang-en">Open to internships</p>
-              <p class="status-footer-label lang-es hidden">Abierto a prácticas</p>
-              <p class="status-available">● Available</p>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-about lang-en">
+              <p>I'm a backend developer in training based in Spain. I'm doing a vocational degree in Software Development (DAM — a 2-year technical program focused on software engineering) and before that I did one in IT Systems & Networking (SMR — networks, servers, and operating systems from scratch). That gave me a solid foundation before I even started writing application code.</p>
+              <p>I work with Java and Spring Boot. That's my main thing — REST APIs, layered architecture, real projects I actually deploy and use. I'm not just following tutorials; I build things because I want to see them work.</p>
+              <p>On the side I'm learning Rust. Not because it's practical right now, but because it's genuinely fascinating — the way it thinks about memory and ownership is unlike anything else I've touched. It's the kind of challenge I enjoy.</p>
+              <p>I'm determined, consistent, and I know what I want: to make a living doing something that challenges me constantly. That's what this is about.</p>
+              <p>Outside of code — books, anime, gaming, walking, and learning things I definitely don't need yet.</p>
+            </div>
+            <div class="hero-about lang-es hidden">
+              <p>Soy un desarrollador backend en formación con base en España. Estudio DAM (Desarrollo de Aplicaciones Multiplataforma, un ciclo formativo de grado superior de dos años enfocado en ingeniería del software) y antes hice SMR (Sistemas Microinformáticos y Redes — redes, servidores y sistemas operativos desde cero). Eso me dio una base sólida antes de empezar a escribir código de aplicación.</p>
+              <p>Trabajo con Java y Spring Boot. Eso es lo mío — APIs REST, arquitectura en capas, proyectos reales que despliego y uso yo mismo. No solo sigo tutoriales; construyo cosas porque quiero verlas funcionar.</p>
+              <p>Por mi cuenta estoy aprendiendo Rust. No porque sea práctico ahora mismo, sino porque me parece genuinamente fascinante — la forma en que piensa la memoria y el ownership no se parece a nada que haya tocado. Es el tipo de reto que disfruto.</p>
+              <p>Soy constante, determinado y tengo las cosas claras: quiero vivir de algo que me desafíe constantemente. De eso va esto.</p>
+              <p>Fuera del código — libros, anime, videojuegos, pasear, y aprender cosas que definitivamente no necesito todavía.</p>
             </div>
           </div>
+
         </div>
 
-        <div class="hero-right">
-          <div class="hero-about lang-en">
-            <p>Backend developer in training based in Spain, currently studying DAM and actively looking for my first job in tech. I build things with Java and Spring Boot — REST APIs, layered architecture, real deployments on my own VPS.</p>
-            <p>My background is in IT Systems & Networking (SMR vocational degree), where I spent two years working with networks, servers and operating systems before writing a line of application code. That gave me a solid understanding of the environment where backend code actually runs — and that perspective shapes how I approach every project.</p>
-            <p>I care about writing clean, well-structured code and building systems that are designed to last. I'm consistent, I learn fast, and I ship. I'm looking for a team where I can contribute from day one and keep growing alongside people who take their craft seriously.</p>
-            <p>Outside of Java I'm learning Rust on the side — the way it handles memory and ownership at compile time genuinely fascinates me. It's the kind of challenge that keeps me thinking.</p>
-            <p>When I'm not coding — gaming, anime, hardware, or just breaking things to see how they work.</p>
-          </div>
-          <div class="hero-about lang-es hidden">
-            <p>Desarrollador backend en formación con base en España, actualmente estudiando DAM y buscando activamente mi primer trabajo en tecnología. Construyo con Java y Spring Boot — APIs REST, arquitectura en capas, despliegues reales en mi propio VPS.</p>
-            <p>Vengo de Sistemas Microinformáticos y Redes (SMR), donde pasé dos años trabajando con redes, servidores y sistemas operativos antes de escribir una línea de código de aplicación. Eso me dio una base sólida sobre el entorno donde realmente corre el backend — y esa perspectiva marca cómo enfoco cada proyecto.</p>
-            <p>Me importa escribir código limpio y bien estructurado, y construir sistemas pensados para durar. Soy constante, aprendo rápido y saco adelante lo que empiezo. Busco un equipo donde pueda aportar desde el primer día y seguir creciendo junto a gente que se toma en serio lo que hace.</p>
-            <p>Fuera de Java estoy aprendiendo Rust por mi cuenta — la forma en que gestiona memoria y ownership en tiempo de compilación me parece genuinamente fascinante. Es el tipo de reto que me mantiene pensando.</p>
-            <p>Cuando no estoy programando — videojuegos, anime, hardware, o simplemente rompiendo cosas para ver cómo funcionan.</p>
+        <div class="scroll-hint" onclick="goTo(1)">
+          <p class="scroll-hint-label lang-en">see my projects</p>
+          <p class="scroll-hint-label lang-es hidden">ver mis proyectos</p>
+          <div class="scroll-hint-arrow">
+            <span></span><span></span><span></span>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="scroll-hint" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-        <p class="scroll-label lang-en">scroll to see projects</p>
-        <p class="scroll-label lang-es hidden">baja para ver proyectos</p>
-        <p class="scroll-arrow">▼</p>
-      </div>
-    </div>
-  </section>
+    <!-- 1 PROJECTS -->
+    <section class="page" id="projects">
+      <div class="page-inner">
+        <div class="section-header">
+          <h2 class="section-title"><em>// </em>PROJECTS</h2>
+        </div>
 
-  <!-- PROJECTS -->
-  <section class="bg-section bg-projects" id="projects">
-    <div class="inner">
-      <div class="section-header">
-        <h2 class="section-title"><em>// </em>PROJECTS</h2>
-      </div>
-
-      <div class="project" data-project="savings-api">
-        <div class="project-top">
-          <p class="project-name">savings-api</p>
-          <p class="project-status">wip</p>
-        </div>
-        <p class="project-desc lang-en">Multi-user personal savings app I actually use myself. JWT auth with refresh tokens, savings goals, transaction history and automatic email notifications.</p>
-        <p class="project-desc lang-es hidden">App de ahorro personal multi-usuario que uso yo mismo. JWT auth con refresh tokens, metas de ahorro, historial de transacciones y notificaciones automáticas por email.</p>
-        <div class="project-tags">
-          <p class="ptag">Spring Boot</p>
-          <p class="ptag">Spring Security</p>
-          <p class="ptag">JWT</p>
-          <p class="ptag">MySQL</p>
-          <p class="ptag">JavaMail</p>
-        </div>
-        <div class="project-btns">
-          <a class="pbtn-demo" href="#" target="_blank">demo ↗</a>
-          <a class="pbtn-repo" href="https://github.com/NUXX-G/Savings-App" target="_blank">repo ↗</a>
-          <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
-          <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
-        </div>
-      </div>
-
-      <div class="project" data-project="fittrack">
-        <div class="project-top">
-          <p class="project-name">FitTrack</p>
-          <p class="project-status">wip</p>
-        </div>
-        <p class="project-desc lang-en">Fitness and nutrition REST API. Track routines, exercises and macros. Muscle group ranking system inspired by competitive games. AI-powered technique analysis and food identification via Gemini API. Built with Petter5-5.</p>
-        <p class="project-desc lang-es hidden">API REST de fitness y nutrición. Seguimiento de rutinas, ejercicios y macros. Sistema de ranking por grupo muscular inspirado en juegos competitivos. Análisis de técnica e identificación de alimentos mediante IA (Gemini API). Desarrollado junto a Petter5-5.</p>
-        <div class="project-tags">
-          <p class="ptag">Java 21</p>
-          <p class="ptag">Spring Boot</p>
-          <p class="ptag">Spring Security</p>
-          <p class="ptag">JWT</p>
-          <p class="ptag">PostgreSQL</p>
-          <p class="ptag">JPA / Hibernate</p>
-          <p class="ptag">Gemini API</p>
-          <p class="ptag">Maven</p>
-        </div>
-        <div class="project-btns">
-          <a class="pbtn-demo" href="#" target="_blank">demo ↗</a>
-          <a class="pbtn-repo" href="https://github.com/NUXX-G/Fittrack" target="_blank">repo ↗</a>
-          <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
-          <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
-        </div>
-      </div>
-
-      <div class="project" data-project="juegorphg">
-        <div class="project-top">
-          <p class="project-name">JuegoRPG</p>
-          <p class="project-status">complete</p>
-        </div>
-        <p class="project-desc lang-en">Turn-based RPG with Swing GUI. Strategy Pattern for independent class combat behaviour, Template Method to share structure across character types without duplicating code. Persistent save system built with Java serialization.</p>
-        <p class="project-desc lang-es hidden">RPG por turnos con GUI en Swing. Strategy Pattern para el comportamiento de combate independiente por clase, Template Method para compartir estructura entre tipos de personaje sin duplicar código. Sistema de guardado persistente con serialización Java.</p>
-        <div class="project-tags">
-          <p class="ptag">Java 21</p>
-          <p class="ptag">Swing</p>
-          <p class="ptag">Strategy Pattern</p>
-          <p class="ptag">Template Method</p>
-        </div>
-        <div class="project-btns">
-          <a class="pbtn-repo" href="https://github.com/NUXX-G" target="_blank">repo ↗</a>
-          <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
-          <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
-        </div>
-      </div>
-
-      <div class="projects-cta">
-        <div class="projects-cta-text">
-          <p class="lang-en">Interested in working together?</p>
-          <p class="lang-es hidden">¿Interesado en trabajar juntos?</p>
-        </div>
-        <div class="projects-cta-links">
-          <div class="cta-email" onclick="copyEmail()">
-            <p>nelson@nelsonffkarlsson.com</p>
-            <p class="cta-copy" id="cta-copy-label">copy ↗</p>
+        <div class="project project-featured" data-project="savings-api">
+          <div class="project-featured-badge lang-en">Featured</div>
+          <div class="project-featured-badge lang-es hidden">Destacado</div>
+          <div class="project-top">
+            <p class="project-name">savings-api</p>
+            <p class="project-status">wip</p>
           </div>
-          <a class="cta-linkedin" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">LinkedIn ↗</a>
+          <p class="project-desc lang-en">Multi-user personal savings app I actually use myself. JWT auth with refresh tokens, savings goals, transaction history and automatic email notifications.</p>
+          <p class="project-desc lang-es hidden">App de ahorro personal multi-usuario que uso yo mismo. JWT auth con refresh tokens, metas de ahorro, historial de transacciones y notificaciones automáticas por email.</p>
+          <div class="project-tags">
+            <p class="ptag">Spring Boot</p>
+            <p class="ptag">Spring Security</p>
+            <p class="ptag">JWT</p>
+            <p class="ptag">MySQL</p>
+            <p class="ptag">JavaMail</p>
+          </div>
+          <div class="project-btns">
+            <a class="pbtn-demo" href="#" target="_blank">demo ↗</a>
+            <a class="pbtn-repo" href="https://github.com/NUXX-G/Savings-App" target="_blank">repo ↗</a>
+            <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
+            <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+
+          <div class="project" data-project="fittrack">
+            <div class="project-top">
+              <p class="project-name">FitTrack</p>
+              <p class="project-status">wip</p>
+            </div>
+            <p class="project-desc lang-en">Fitness and nutrition REST API with AI-powered technique analysis and food identification via Gemini API. Built with <a class="collab-link" href="https://github.com/Petter5-5" target="_blank">Petter5-5 ↗</a>.</p>
+            <p class="project-desc lang-es hidden">API REST de fitness y nutrición con análisis de técnica e identificación de alimentos mediante IA (Gemini API). Desarrollado junto a <a class="collab-link" href="https://github.com/Petter5-5" target="_blank">Petter5-5 ↗</a>.</p>
+            <div class="project-tags">
+              <p class="ptag">Java 21</p>
+              <p class="ptag">Spring Boot</p>
+              <p class="ptag">PostgreSQL</p>
+              <p class="ptag">Gemini API</p>
+            </div>
+            <div class="project-btns">
+              <a class="pbtn-repo" href="https://github.com/NUXX-G/Fittrack" target="_blank">repo ↗</a>
+              <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
+              <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
+            </div>
+          </div>
+
+          <div class="project" data-project="juegorphg">
+            <div class="project-top">
+              <p class="project-name">JuegoRPG</p>
+              <p class="project-status">complete</p>
+            </div>
+            <p class="project-desc lang-en">Turn-based RPG with Swing GUI. Strategy Pattern for combat behaviour, Template Method across character types. Persistent save system via Java serialization.</p>
+            <p class="project-desc lang-es hidden">RPG por turnos con GUI en Swing. Strategy Pattern para el combate, Template Method entre tipos de personaje. Guardado persistente con serialización Java.</p>
+            <div class="project-tags">
+              <p class="ptag">Java 21</p>
+              <p class="ptag">Swing</p>
+              <p class="ptag">Strategy Pattern</p>
+              <p class="ptag">Template Method</p>
+            </div>
+            <div class="project-btns">
+              <a class="pbtn-repo" href="https://github.com/NUXX-G" target="_blank">repo ↗</a>
+              <a class="pbtn-video lang-en" href="#" target="_blank">video ↗</a>
+              <a class="pbtn-video lang-es hidden" href="#" target="_blank">video ↗</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="projects-cta">
+          <div class="projects-cta-text">
+            <p class="lang-en">Interested in working together?</p>
+            <p class="lang-es hidden">¿Interesado en trabajar juntos?</p>
+          </div>
+          <div class="projects-cta-links">
+            <div class="cta-email" onclick="copyEmail()">
+              <p>nelson@nelsonffkarlsson.com</p>
+              <p class="cta-copy" id="cta-copy-label">copy ↗</p>
+            </div>
+            <a class="cta-linkedin" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">LinkedIn ↗</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- STACK -->
-  <section class="bg-section bg-stack" id="stack">
-    <div class="inner">
-      <div class="section-header">
-        <h2 class="section-title"><em>// </em>STACK</h2>
-      </div>
+    <!-- 2 STACK -->
+    <section class="page" id="stack">
+      <div class="page-inner">
+        <div class="section-header">
+          <h2 class="section-title"><em>// </em>STACK</h2>
+        </div>
+        <div class="stack-cols">
+          <div class="stack-col">
 
-      <div class="stack-group">
-        <p class="stack-group-label">Languages</p>
-        <div class="stack-row">
-          <p class="stag">Java 21</p>
-          <p class="stag">Rust</p>
-          <p class="stag">SQL</p>
+            <div class="stack-group">
+              <p class="stack-group-label">Languages</p>
+              <div class="stack-row">
+                <p class="stag">Java 21</p>
+                <p class="stag">Rust</p>
+                <p class="stag">SQL</p>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-group-label">Backend</p>
+              <div class="stack-row">
+                <p class="stag">Spring Boot</p>
+                <p class="stag">Spring Security</p>
+                <p class="stag">JPA / Hibernate</p>
+                <p class="stag">MySQL</p>
+                <p class="stag">PostgreSQL</p>
+                <p class="stag">SQL Server</p>
+                <p class="stag">Maven</p>
+                <p class="stag">Swagger</p>
+                <p class="stag">JUnit 5</p>
+                <p class="stag">REST APIs</p>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-group-label">Infra &amp; DevOps</p>
+              <div class="stack-row">
+                <p class="stag">Docker</p>
+                <p class="stag">Linux · VPS</p>
+                <p class="stag">AWS EC2/S3/VPC</p>
+                <p class="stag">Nginx</p>
+                <p class="stag">Apache</p>
+                <p class="stag">Debian Server</p>
+                <p class="stag">Ubuntu Server</p>
+                <p class="stag">SSH</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="stack-col">
+
+            <div class="stack-group">
+              <p class="stack-group-label lang-en">Networking &amp; Systems — SMR</p>
+              <p class="stack-group-label lang-es hidden">Redes y Sistemas — SMR</p>
+              <div class="stack-row">
+                <p class="stag">TCP/IP</p>
+                <p class="stag">DNS</p>
+                <p class="stag">DHCP</p>
+                <p class="stag">Cisco Packet Tracer</p>
+                <p class="stag">Windows Server</p>
+                <p class="stag">Active Directory</p>
+                <p class="stag">LAN/WAN</p>
+                <p class="stag">Routing &amp; Switching</p>
+                <p class="stag lang-en">Virtualization</p>
+                <p class="stag lang-es hidden">Virtualización</p>
+                <p class="stag lang-en">Assembly &amp; Hardware</p>
+                <p class="stag lang-es hidden">Montaje &amp; Hardware</p>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-group-label">Tools</p>
+              <div class="stack-row">
+                <p class="stag">Git</p>
+                <p class="stag">GitHub</p>
+                <p class="stag">IntelliJ</p>
+                <p class="stag">Postman</p>
+                <p class="stag">VS Code</p>
+                <p class="stag">SSMS</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="stack-group">
-        <p class="stack-group-label">Backend &amp; Testing</p>
-        <div class="stack-row">
-          <p class="stag">Spring Boot</p>
-          <p class="stag">Spring Security</p>
-          <p class="stag">MySQL</p>
-          <p class="stag">JPA / Hibernate</p>
-          <p class="stag">REST APIs</p>
-          <p class="stag">SQL Server</p>
-          <p class="stag">Maven</p>
-          <p class="stag">Swagger</p>
+    <!-- 3 CONTACT -->
+    <section class="page" id="contact">
+      <div class="page-inner page-inner-contact">
+        <div class="section-header">
+          <h2 class="section-title"><em>// </em>CONTACT</h2>
         </div>
-      </div>
-
-      <div class="stack-group">
-        <p class="stack-group-label">Infra &amp; DevOps</p>
-        <div class="stack-row">
-          <p class="stag">Docker</p>
-          <p class="stag">Linux · VPS</p>
-          <p class="stag">AWS EC2/S3/VPC</p>
-          <p class="stag">Nginx</p>
-          <p class="stag">Apache</p>
-          <p class="stag">Debian Server</p>
-          <p class="stag">Ubuntu Server</p>
+        <p class="contact-availability lang-en">Open to backend internships in Spain or remote — available now.</p>
+        <p class="contact-availability lang-es hidden">Abierto a prácticas de backend en España o remoto — disponible ahora.</p>
+        <div class="contact-row contact-email" onclick="copyEmail()">
+          <p>nelson@nelsonffkarlsson.com</p>
+          <p class="contact-copy" id="copy-label">copy ↗</p>
         </div>
+        <a class="contact-row" href="https://github.com/NUXX-G" target="_blank">
+          <p>github.com/NUXX-G</p>
+          <p class="contact-arrow">↗</p>
+        </a>
+        <a class="contact-row" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">
+          <p>linkedin · Nelson Filipe Fardilha Karlsson</p>
+          <p class="contact-arrow">↗</p>
+        </a>
+        <p class="footer-note lang-en">© 2026 Nelson Filipe Fardilha Karlsson · available for internships · Spain</p>
+        <p class="footer-note lang-es hidden">© 2026 Nelson Filipe Fardilha Karlsson · disponible para prácticas · España</p>
       </div>
+    </section>
 
-      <div class="stack-group">
-        <p class="stack-group-label lang-en">Networking &amp; Systems — SMR</p>
-        <p class="stack-group-label lang-es hidden">Redes y Sistemas — SMR</p>
-        <div class="stack-row">
-          <p class="stag">TCP/IP</p>
-          <p class="stag">DNS</p>
-          <p class="stag">DHCP</p>
-          <p class="stag">Cisco Packet Tracer</p>
-          <p class="stag">Windows Server</p>
-          <p class="stag">Active Directory</p>
-          <p class="stag">LAN/WAN</p>
-          <p class="stag">Routing &amp; Switching</p>
-          <p class="stag lang-en">Virtualization</p>
-          <p class="stag lang-es hidden">Virtualización</p>
-          <p class="stag lang-en">Assembly &amp; Hardware</p>
-          <p class="stag lang-es hidden">Montaje &amp; Hardware</p>
-        </div>
-      </div>
-
-      <div class="stack-group">
-        <p class="stack-group-label">Tools</p>
-        <div class="stack-row">
-          <p class="stag">Git</p>
-          <p class="stag">GitHub</p>
-          <p class="stag">IntelliJ</p>
-          <p class="stag">NetBeans</p>
-          <p class="stag">VS Code</p>
-          <p class="stag">SQL Server Management Studio</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="bg-section bg-contact" id="contact">
-    <div class="inner">
-      <div class="section-header">
-        <h2 class="section-title"><em>// </em>CONTACT</h2>
-      </div>
-      <div class="contact-row contact-email" onclick="copyEmail()">
-        <p>nelson@nelsonffkarlsson.com</p>
-        <p class="contact-copy" id="copy-label">copy ↗</p>
-      </div>
-      <a class="contact-row" href="https://github.com/NUXX-G" target="_blank">
-        <p>github.com/NUXX-G</p>
-        <p class="contact-arrow">↗</p>
-      </a>
-      <a class="contact-row" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">
-        <p>linkedin · Nelson Filipe Fardilha Karlsson</p>
-        <p class="contact-arrow">↗</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-section bg-footer">
-    <div class="inner footer-inner">
-      <p class="lang-en">available for internships · Spain</p>
-      <p class="lang-es hidden">disponible para prácticas · España</p>
-      <p>© 2026 Nelson Filipe Fardilha Karlsson</p>
-    </div>
-  </footer>
+  </div>
 
   <script src="js/main.js"></script>
 
