@@ -151,11 +151,8 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto;
+  overflow: hidden;
 }
-
-.page-inner::-webkit-scrollbar { display: none; }
-.page-inner { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* HERO */
 .hero-grid {
@@ -649,7 +646,7 @@ h1 em { color: var(--blue); font-style: normal; }
 
 .footer-note {
   font-size: 10px;
-  color: var(--soft);
+  color: var(--muted);
   letter-spacing: 0.06em;
   text-align: center;
   margin-top: auto;
