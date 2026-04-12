@@ -8,7 +8,6 @@ let currentLang = 'en';
 let currentSection = 0;
 const totalSections = 4;
 
-// ─── DOTS ──────────────────────────────────────────────────────
 const sectionsEl = document.getElementById('sections');
 const dots = document.querySelectorAll('.dot');
 
@@ -30,19 +29,17 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowUp' && currentSection > 0) goTo(currentSection - 1);
 });
 
-// ─── IDIOMA ────────────────────────────────────────────────────
 function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang !== 'en'));
   document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', lang !== 'es'));
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
   document.getElementById('hi-text').textContent = lang === 'es' ? '// Hola, soy Nelson' : "// Hi, I'm Nelson";
   document.documentElement.lang = lang;
   updateVideoLinks(lang);
 }
 
-// ─── VIDEO LINKS ───────────────────────────────────────────────
 function updateVideoLinks(lang) {
   document.querySelectorAll('.project[data-project]').forEach(project => {
     const key = project.getAttribute('data-project');
@@ -54,7 +51,6 @@ function updateVideoLinks(lang) {
   });
 }
 
-// ─── COPY EMAIL ────────────────────────────────────────────────
 function copyEmail() {
   const email = 'nelson@nelsonffkarlsson.com';
   const labels = [
@@ -65,16 +61,15 @@ function copyEmail() {
   function showCopied() {
     labels.forEach(label => {
       if (!label) return;
-      label.textContent = currentLang === 'es' ? 'copiado ✓' : 'copied ✓';
+      label.textContent = currentLang === 'es' ? 'copiado' : 'copied';
       label.classList.add('copied');
       setTimeout(() => {
-        label.textContent = 'copy ↗';
+        label.textContent = 'copy';
         label.classList.remove('copied');
       }, 2000);
     });
   }
 
-  // Funciona en HTTPS (VPS) y en local
   const el = document.createElement('textarea');
   el.value = email;
   el.setAttribute('readonly', '');
@@ -87,5 +82,4 @@ function copyEmail() {
   showCopied();
 }
 
-// Init
 updateVideoLinks('en');
