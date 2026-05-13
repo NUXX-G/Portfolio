@@ -4,7 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Nelson Filipe Fardilha Karlsson — Backend Developer based in Spain. Java, Spring Boot, REST APIs." />
+  <meta name="robots" content="index, follow" />
   <title>Nelson Filipe Fardilha Karlsson — Backend Developer</title>
+  <meta property="og:title" content="Nelson Filipe Fardilha Karlsson — Backend Developer" />
+  <meta property="og:description" content="Backend Developer based in Spain. Java, Spring Boot, REST APIs. Open to opportunities." />
+  <meta property="og:url" content="https://nelsonffkarlsson.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://nelsonffkarlsson.com/recursos/img/k2_icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Nelson Filipe Fardilha Karlsson — Backend Developer" />
+  <link rel="canonical" href="https://nelsonffkarlsson.com" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nelson Filipe Fardilha Karlsson",
+    "jobTitle": "Backend Developer",
+    "url": "https://nelsonffkarlsson.com",
+    "sameAs": [
+      "https://github.com/NUXX-G",
+      "https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/"
+    ],
+    "knowsAbout": ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "MySQL", "Docker", "Linux"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ES"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -22,9 +49,9 @@
         <a href="#stack" onclick="goTo(2)">stack</a>
         <a href="#contact" onclick="goTo(3)">contact</a>
       </div>
-      <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <div class="lang-switch" id="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
       </div>
     </div>
   </nav>
@@ -47,38 +74,37 @@
             <p class="hi" id="hi-text">// Hi, I'm Nelson</p>
             <h1>Nelson Filipe<br><em>Fardilha Karlsson.</em></h1>
             <div class="hero-links">
-              <a class="link-outline" href="https://github.com/NUXX-G" target="_blank">GITHUB</a>
-              <a class="link-fill" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">LINKEDIN</a>
+              <a class="link-outline" href="https://github.com/NUXX-G" target="_blank" rel="noopener noreferrer">GITHUB</a>
+              <a class="link-fill" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
             </div>
 
-            <!-- FEATURED PROJECT CARD -->
+            <!-- FEATURED PROJECT CARD — your best project lives here -->
             <div class="hero-project-card">
               <div class="hero-project-top">
                 <div>
                   <p class="hero-project-label lang-en">Featured Project</p>
                   <p class="hero-project-label lang-es hidden">Proyecto Destacado</p>
-                  <p class="hero-project-name">FitTrack</p>
+                  <p class="hero-project-name lang-en">Project Name</p>
+                  <p class="hero-project-name lang-es hidden">Nombre Proyecto</p>
                 </div>
                 <p class="project-status lang-en">wip</p>
                 <p class="project-status lang-es hidden">en progreso</p>
               </div>
-              <p class="hero-project-desc lang-en">Fitness and nutrition REST API with AI-powered technique analysis and food identification via Gemini API.</p>
-              <p class="hero-project-desc lang-es hidden">API REST de fitness y nutricion con analisis de tecnica e identificacion de alimentos mediante IA (Gemini API).</p>
+              <p class="hero-project-desc lang-en">Short description of your featured project. What it does, why it matters, key tech decisions.</p>
+              <p class="hero-project-desc lang-es hidden">Descripción breve de tu proyecto destacado. Qué hace, por qué importa, decisiones técnicas clave.</p>
               <div class="project-tags">
                 <p class="ptag">Java 21</p>
                 <p class="ptag">Spring Boot</p>
-                <p class="ptag">PostgreSQL</p>
-                <p class="ptag">Gemini API</p>
               </div>
               <div class="project-btns">
                 <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
-                <a class="pbtn-repo" href="https://github.com/NUXX-G/Fittrack" target="_blank">repo &#8599;</a>
+                <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
                 <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
                 <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
               </div>
               <div class="hero-project-footer">
-                <p class="status-footer-label lang-en">Open to opportunities · Spain or remote</p>
-                <p class="status-footer-label lang-es hidden">Abierto a oportunidades · Espana o remoto</p>
+                <a class="see-more-btn lang-en" onclick="goTo(1)">see more &#8595;</a>
+                <a class="see-more-btn lang-es hidden" onclick="goTo(1)">ver más &#8595;</a>
                 <p class="status-available">&#9679; Available</p>
               </div>
             </div>
@@ -87,20 +113,16 @@
 
           <div class="hero-right">
             <div class="hero-about lang-en">
-              <p>I'm a backend developer in training based in Spain. I'm doing a vocational degree in Software Development (DAM — a 2-year technical program focused on software engineering) and before that I did one in IT Systems &amp; Networking (SMR — networks, servers, and operating systems from scratch).</p>
-              <p>The networking and systems background was unplanned but it stuck — it gives me context that I find useful when working on backend.</p>
-              <p>Java and Spring Boot is where I spend most of my time — REST APIs, layered architecture, security, persistence. Real projects I actually deploy and use, not just tutorials I followed once and forgot.</p>
-              <p>On the side I'm learning Rust. Not because it's practical right now, but because it's genuinely fascinating — the way it thinks about memory and ownership is unlike anything else I've touched. It's the kind of challenge I enjoy.</p>
-              <p>I'm determined, consistent, and I know what I want: to make a living doing something that challenges me constantly. That's what this is about.</p>
-              <p>Outside of code — books, anime, gaming, training and learning things I definitely don't need yet.</p>
+              <p>I'm a backend developer based in Spain, focused on Java and Spring Boot — REST APIs, layered architecture, security, persistence. Real projects I actually deploy and use, not tutorials I followed once and forgot.</p>
+              <p>My formation has two layers: I'm currently finishing a vocational degree in Software Development (DAM — a 2-year technical program equivalent to an associate's degree in software engineering), and before that I completed one in IT Systems &amp; Networking (SMR — covering networks, servers, and operating systems from the ground up). That systems background wasn't planned, but it stuck — and it gives me context I find genuinely useful when working close to infrastructure.</p>
+              <p>On the side I'm learning Rust — the way it handles memory and ownership is unlike anything else I've touched. That kind of challenge is what keeps me going.</p>
+              <p>I know what I want: to build things that matter and keep getting harder. That's what this is about.</p>
             </div>
             <div class="hero-about lang-es hidden">
-              <p>Soy un desarrollador backend en formacion con base en Espana. Estudio DAM (Desarrollo de Aplicaciones Multiplataforma, un ciclo formativo de grado superior de dos anos enfocado en ingenieria del software) y antes hice SMR (Sistemas Microinformaticos y Redes — redes, servidores y sistemas operativos desde cero).</p>
-              <p>Lo de redes y sistemas no estaba planeado pero se quedo — me da contexto que encuentro util cuando trabajo en backend.</p>
-              <p>Java y Spring Boot es donde paso la mayor parte del tiempo — APIs REST, arquitectura en capas, seguridad, persistencia. Proyectos reales que despliego y uso yo mismo, no tutoriales que segui una vez y olvide.</p>
-              <p>Por mi cuenta estoy aprendiendo Rust. No porque sea practico ahora mismo, sino porque me parece genuinamente fascinante — la forma en que piensa la memoria y el ownership no se parece a nada que haya tocado. Es el tipo de reto que disfruto.</p>
-              <p>Soy constante, determinado y tengo las cosas claras: quiero vivir de algo que me desafie constantemente. De eso va esto.</p>
-              <p>Fuera del codigo — libros, anime, videojuegos, entrenar y aprender cosas que definitivamente no necesito todavia.</p>
+              <p>Soy un desarrollador backend con base en España, especializado en Java y Spring Boot — APIs REST, arquitectura en capas, seguridad, persistencia. Proyectos reales que despliego y uso yo mismo, no tutoriales que seguí una vez y olvidé.</p>
+              <p>Mi formación tiene dos capas: actualmente estoy terminando un grado superior en Desarrollo de Aplicaciones Multiplataforma (DAM — un programa técnico de 2 años equivalente a un grado asociado en ingeniería del software), y antes completé uno en Sistemas Microinformáticos y Redes (SMR — redes, servidores y sistemas operativos desde cero). Esa base en sistemas no estaba planeada, pero se quedó — y me da contexto que encuentro genuinamente útil cuando trabajo cerca de la infraestructura.</p>
+              <p>Por mi cuenta estoy aprendiendo Rust — la forma en que gestiona la memoria y el ownership no se parece a nada que haya tocado. Ese tipo de reto es lo que me mantiene.</p>
+              <p>Sé lo que quiero: construir cosas que importen y que sean cada vez más difíciles. De eso va esto.</p>
             </div>
           </div>
 
@@ -123,31 +145,44 @@
           <h2 class="section-title"><em>// </em>PROJECTS</h2>
         </div>
 
+        <!--
+          ═══════════════════════════════════════════
+          HOW TO ADD A PROJECT:
+          ═══════════════════════════════════════════
+          Copy the <div class="project" data-project="..."> block below
+          and fill in: name, status, description (both langs), tags, links.
+          To feature a project, add class "project-featured" + the badge.
+
+          Available statuses: "wip" / "complete"
+          Available buttons: pbtn-demo, pbtn-repo, pbtn-video
+          (omit any you don't need — they're optional)
+          ═══════════════════════════════════════════
+        -->
+
         <!-- FEATURED -->
-        <div class="project project-featured" data-project="fittrack">
+        <div class="project project-featured" id="featured-project">
           <div class="project-featured-badge lang-en">Featured</div>
           <div class="project-featured-badge lang-es hidden">Destacado</div>
           <div class="project-image-wrap">
             <div class="project-image-placeholder">
               <span class="lang-en">screenshot coming soon</span>
-              <span class="lang-es hidden">captura proximamente</span>
+              <span class="lang-es hidden">captura próximamente</span>
             </div>
           </div>
           <div class="project-top">
-            <p class="project-name">FitTrack</p>
-            <p class="project-status">wip</p>
+            <p class="project-name lang-en">Featured project</p>
+            <p class="project-name lang-es hidden">Proyecto destacado</p>
+            <p class="project-status">—</p>
           </div>
-          <p class="project-desc lang-en">Fitness and nutrition REST API with AI-powered technique analysis and food identification via Gemini API. Built with <a class="collab-link" href="https://github.com/Petter5-5" target="_blank">Petter5-5 &#8599;</a>.</p>
-          <p class="project-desc lang-es hidden">API REST de fitness y nutricion con analisis de tecnica e identificacion de alimentos mediante IA (Gemini API). Desarrollado junto a <a class="collab-link" href="https://github.com/Petter5-5" target="_blank">Petter5-5 &#8599;</a>.</p>
+          <p class="project-desc lang-en">Your featured project description goes here. Explain what it does and why it matters.</p>
+          <p class="project-desc lang-es hidden">La descripción de tu proyecto destacado va aquí. Explica qué hace y por qué es relevante.</p>
           <div class="project-tags">
-            <p class="ptag">Java 21</p>
-            <p class="ptag">Spring Boot</p>
-            <p class="ptag">PostgreSQL</p>
-            <p class="ptag">Gemini API</p>
+            <p class="ptag lang-en">tag</p>
+            <p class="ptag lang-es hidden">tag</p>
           </div>
           <div class="project-btns">
             <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
-            <a class="pbtn-repo" href="https://github.com/NUXX-G/Fittrack" target="_blank">repo &#8599;</a>
+            <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
             <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
             <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
           </div>
@@ -156,93 +191,108 @@
         <!-- GRID 4 PROYECTOS -->
         <div class="projects-grid">
 
-          <!-- savings-api -->
-          <div class="project" data-project="savings-api">
+          <div class="project" data-project="project-1">
             <div class="project-image-wrap small">
               <div class="project-image-placeholder">
-                <span class="lang-en">screenshot coming soon</span>
-                <span class="lang-es hidden">captura proximamente</span>
+                <span class="lang-en">coming soon</span>
+                <span class="lang-es hidden">próximamente</span>
               </div>
             </div>
             <div class="project-top">
-              <p class="project-name">savings-api</p>
-              <p class="project-status lang-en">complete</p>
-              <p class="project-status lang-es hidden">completo</p>
+              <p class="project-name lang-en">Project name</p>
+              <p class="project-name lang-es hidden">Nombre proyecto</p>
+              <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Multi-user personal savings app. JWT auth, savings goals, transaction history and automatic email notifications.</p>
-            <p class="project-desc lang-es hidden">App de ahorro personal multi-usuario. JWT auth, metas de ahorro, historial de transacciones y notificaciones por email.</p>
+            <p class="project-desc lang-en">Brief description of this project.</p>
+            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
             <div class="project-tags">
-              <p class="ptag">Spring Boot</p>
-              <p class="ptag">Spring Security</p>
-              <p class="ptag">MySQL</p>
+              <p class="ptag lang-en">tag</p>
+              <p class="ptag lang-es hidden">tag</p>
             </div>
             <div class="project-btns">
               <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
-              <a class="pbtn-repo" href="https://github.com/NUXX-G/Savings-App" target="_blank">repo &#8599;</a>
+              <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
               <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
               <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
             </div>
           </div>
 
-          <!-- JuegoRPG -->
-          <div class="project" data-project="juegorphg">
+          <div class="project" data-project="project-2">
             <div class="project-image-wrap small">
               <div class="project-image-placeholder">
-                <span class="lang-en">screenshot coming soon</span>
-                <span class="lang-es hidden">captura proximamente</span>
+                <span class="lang-en">coming soon</span>
+                <span class="lang-es hidden">próximamente</span>
               </div>
             </div>
             <div class="project-top">
-              <p class="project-name">JuegoRPG</p>
-              <p class="project-status lang-en">complete</p>
-              <p class="project-status lang-es hidden">completo</p>
+              <p class="project-name lang-en">Project name</p>
+              <p class="project-name lang-es hidden">Nombre proyecto</p>
+              <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Turn-based RPG with Swing GUI. Strategy Pattern for combat, Template Method across character types.</p>
-            <p class="project-desc lang-es hidden">RPG por turnos con GUI en Swing. Strategy Pattern para el combate, Template Method entre tipos de personaje.</p>
+            <p class="project-desc lang-en">Brief description of this project.</p>
+            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
             <div class="project-tags">
-              <p class="ptag">Java 21</p>
-              <p class="ptag">Swing</p>
-              <p class="ptag">Strategy Pattern</p>
+              <p class="ptag lang-en">tag</p>
+              <p class="ptag lang-es hidden">tag</p>
             </div>
             <div class="project-btns">
-              <a class="pbtn-repo" href="https://github.com/NUXX-G/JuegoRPG" target="_blank">repo &#8599;</a>
+              <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
+              <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
               <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
               <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
             </div>
           </div>
 
-          <!-- PLACEHOLDER 3 -->
-          <div class="project project-placeholder">
+          <div class="project" data-project="project-3">
             <div class="project-image-wrap small">
               <div class="project-image-placeholder">
                 <span class="lang-en">coming soon</span>
-                <span class="lang-es hidden">proximamente</span>
+                <span class="lang-es hidden">próximamente</span>
               </div>
             </div>
             <div class="project-top">
-              <p class="project-name placeholder-name lang-en">Next project</p>
-              <p class="project-name placeholder-name lang-es hidden">Proximo proyecto</p>
+              <p class="project-name lang-en">Project name</p>
+              <p class="project-name lang-es hidden">Nombre proyecto</p>
               <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Something is being built.</p>
-            <p class="project-desc lang-es hidden">Algo se esta construyendo.</p>
+            <p class="project-desc lang-en">Brief description of this project.</p>
+            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
+            <div class="project-tags">
+              <p class="ptag lang-en">tag</p>
+              <p class="ptag lang-es hidden">tag</p>
+            </div>
+            <div class="project-btns">
+              <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
+              <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
+              <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
+              <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
+            </div>
           </div>
 
-          <!-- PLACEHOLDER 4 -->
-          <div class="project project-placeholder">
+          <div class="project" data-project="project-4">
             <div class="project-image-wrap small">
               <div class="project-image-placeholder">
                 <span class="lang-en">coming soon</span>
-                <span class="lang-es hidden">proximamente</span>
+                <span class="lang-es hidden">próximamente</span>
               </div>
             </div>
             <div class="project-top">
-              <p class="project-name placeholder-name lang-en">Next project</p>
-              <p class="project-name placeholder-name lang-es hidden">Proximo proyecto</p>
+              <p class="project-name lang-en">Project name</p>
+              <p class="project-name lang-es hidden">Nombre proyecto</p>
               <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Something is being built.</p>
-            <p class="project-desc lang-es hidden">Algo se esta construyendo.</p>
+            <p class="project-desc lang-en">Brief description of this project.</p>
+            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
+            <div class="project-tags">
+              <p class="ptag lang-en">tag</p>
+              <p class="ptag lang-es hidden">tag</p>
+            </div>
+            <div class="project-btns">
+              <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
+              <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
+              <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
+              <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
+            </div>
           </div>
 
         </div>
@@ -278,15 +328,19 @@
                 <p class="stag">Maven</p>
                 <p class="stag">Swagger</p>
                 <p class="stag">JUnit 5</p>
-                <p class="stag">REST APIs</p>
+                <p class="stag">Mockito</p>
+                <p class="stag">Lombok</p>
+                <p class="stag">Redis</p>
               </div>
             </div>
             <div class="stack-group">
               <p class="stack-group-label">Infra &amp; DevOps</p>
               <div class="stack-row">
                 <p class="stag">Docker</p>
+                <p class="stag">Docker Compose</p>
                 <p class="stag">Linux VPS</p>
                 <p class="stag">AWS EC2/S3/VPC</p>
+                <p class="stag">GitHub Actions</p>
                 <p class="stag">Nginx</p>
                 <p class="stag">Apache</p>
                 <p class="stag">Debian Server</p>
@@ -309,9 +363,20 @@
                 <p class="stag">LAN/WAN</p>
                 <p class="stag">Routing and Switching</p>
                 <p class="stag lang-en">Virtualization</p>
-                <p class="stag lang-es hidden">Virtualizacion</p>
+                <p class="stag lang-es hidden">Virtualización</p>
                 <p class="stag lang-en">Assembly and Hardware</p>
                 <p class="stag lang-es hidden">Montaje y Hardware</p>
+              </div>
+            </div>
+            <div class="stack-group">
+              <p class="stack-group-label">Architecture &amp; Patterns</p>
+              <div class="stack-row">
+                <p class="stag">Microservices</p>
+                <p class="stag">REST APIs</p>
+                <p class="stag">DDD</p>
+                <p class="stag">Layered / n-Tier</p>
+                <p class="stag">JWT / OAuth2</p>
+                <p class="stag">Kafka</p>
               </div>
             </div>
             <div class="stack-group">
@@ -337,21 +402,21 @@
           <h2 class="section-title"><em>// </em>CONTACT</h2>
         </div>
         <p class="contact-availability lang-en">Open to backend opportunities in Spain or remote — available now.</p>
-        <p class="contact-availability lang-es hidden">Abierto a oportunidades de backend en Espana o remoto — disponible ahora.</p>
+        <p class="contact-availability lang-es hidden">Abierto a oportunidades de backend en España o remoto — disponible ahora.</p>
         <div class="contact-row contact-email" onclick="copyEmail()">
           <p>nelson@nelsonffkarlsson.com</p>
           <p class="contact-copy" id="copy-label">copy &#8599;</p>
         </div>
-        <a class="contact-row" href="https://github.com/NUXX-G" target="_blank">
+        <a class="contact-row" href="https://github.com/NUXX-G" target="_blank" rel="noopener noreferrer">
           <p>github.com/NUXX-G</p>
           <p class="contact-arrow">&#8599;</p>
         </a>
-        <a class="contact-row" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank">
+        <a class="contact-row" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank" rel="noopener noreferrer">
           <p>linkedin · Nelson Filipe Fardilha Karlsson</p>
           <p class="contact-arrow">&#8599;</p>
         </a>
         <p class="footer-note lang-en">2026 Nelson Filipe Fardilha Karlsson · open to opportunities · Spain or remote</p>
-        <p class="footer-note lang-es hidden">2026 Nelson Filipe Fardilha Karlsson · abierto a oportunidades · Espana o remoto</p>
+        <p class="footer-note lang-es hidden">2026 Nelson Filipe Fardilha Karlsson · abierto a oportunidades · España o remoto</p>
       </div>
     </section>
 

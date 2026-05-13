@@ -1,8 +1,4 @@
-const VIDEO_LINKS = {
-  'savings-api': { es: '#', en: '#' },
-  'fittrack':    { es: '#', en: '#' },
-  'juegorphg':   { es: '#', en: '#' }
-};
+const VIDEO_LINKS = {};
 
 let currentLang = 'en';
 let currentSection = 0;
@@ -24,54 +20,71 @@ function goTo(index) {
 
 sectionsEl.addEventListener('scroll', updateDots, { passive: true });
 
-document.addEventListener('keydown', e => {
+document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowDown' && currentSection < totalSections - 1) goTo(currentSection + 1);
   if (e.key === 'ArrowUp' && currentSection > 0) goTo(currentSection - 1);
 });
 
+document.getElementById('lang-switch').addEventListener('click', function(e) {
+  var btn = e.target.closest('.lang-btn');
+  if (!btn) return;
+  setLang(btn.getAttribute('data-lang'));
+});
+
 function setLang(lang) {
   currentLang = lang;
-  document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang !== 'en'));
-  document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', lang !== 'es'));
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+  document.querySelectorAll('.lang-en').forEach(function(el) { el.classList.toggle('hidden', lang !== 'en'); });
+  document.querySelectorAll('.lang-es').forEach(function(el) { el.classList.toggle('hidden', lang !== 'es'); });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) { btn.classList.toggle('active', btn.getAttribute('data-lang') === lang); });
   document.getElementById('hi-text').textContent = lang === 'es' ? '// Hola, soy Nelson' : "// Hi, I'm Nelson";
   document.documentElement.lang = lang;
   updateVideoLinks(lang);
 }
 
 function updateVideoLinks(lang) {
-  document.querySelectorAll('.project[data-project]').forEach(project => {
-    const key = project.getAttribute('data-project');
+  document.querySelectorAll('.project[data-project]').forEach(function(project) {
+    var key = project.getAttribute('data-project');
     if (!VIDEO_LINKS[key]) return;
-    const videoEN = project.querySelector('.pbtn-video.lang-en');
-    const videoES = project.querySelector('.pbtn-video.lang-es');
+    var videoEN = project.querySelector('.pbtn-video.lang-en');
+    var videoES = project.querySelector('.pbtn-video.lang-es');
     if (videoEN) videoEN.href = VIDEO_LINKS[key].en;
     if (videoES) videoES.href = VIDEO_LINKS[key].es;
   });
 }
 
 function copyEmail() {
-  const email = 'nelson@nelsonffkarlsson.com';
-  const labels = [
+  var email = 'nelson@nelsonffkarlsson.com';
+  var labels = [
     document.getElementById('copy-label'),
     document.getElementById('cta-copy-label')
   ];
 
   function showCopied() {
-    labels.forEach(label => {
+    labels.forEach(function(label) {
       if (!label) return;
       label.textContent = currentLang === 'es' ? 'copiado' : 'copied';
       label.classList.add('copied');
-      setTimeout(() => {
+      setTimeout(function() {
         label.textContent = 'copy';
         label.classList.remove('copied');
       }, 2000);
     });
   }
 
-  const el = document.createElement('textarea');
-  el.value = email;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(showCopied).catch(function() {
+      fallbackCopy(email);
+      showCopied();
+    });
+  } else {
+    fallbackCopy(email);
+    showCopied();
+  }
+}
+
+function fallbackCopy(text) {
+  var el = document.createElement('textarea');
+  el.value = text;
   el.setAttribute('readonly', '');
   el.style.cssText = 'position:fixed;top:-9999px;left:-9999px;';
   document.body.appendChild(el);
@@ -79,7 +92,6 @@ function copyEmail() {
   el.setSelectionRange(0, 99999);
   try { document.execCommand('copy'); } catch(e) {}
   document.body.removeChild(el);
-  showCopied();
 }
 
 updateVideoLinks('en');
