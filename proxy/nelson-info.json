@@ -1,0 +1,66 @@
+{
+  "name": "Nelson Filipe Fardilha Karlsson",
+  "alias": "NUXX",
+  "location": "Málaga, Spain",
+  "role": "Backend Developer",
+  "available": true,
+  "looking_for": "First remote backend developer job",
+  "email": "nelson@nelsonffkarlsson.com",
+  "github": "github.com/NUXX-G",
+  "linkedin": "Nelson Filipe Fardilha Karlsson",
+  "portfolio": "nelsonffkarlsson.com",
+  "languages_spoken": [
+    { "language": "Spanish", "level": "Native" },
+    { "language": "English", "level": "B2" }
+  ],
+  "personality": {
+    "motivation": "Drawn to the logic behind things. Backend development appealed to him from the start — the challenge of writing code that is performant, secure, and scalable. A clear decision, not a gradual one. Always preferred logic and architecture over visual work.",
+    "outside_work": "Genuinely curious about new technologies — always experimenting and learning. Enjoys video games, music across all genres, training, and keeping a calm, steady mindset.",
+    "why_hire": "Not a genius who knows everything, and does not pretend to be. Gets frustrated like any person. But he is perseverant, consistent, and shows up with the right attitude. Does not just want to learn — wants to contribute and demonstrate what he already knows, from both formal education and self-taught experience."
+  },
+  "stack": {
+    "languages": ["Java 21", "SQL", "Rust (learning)"],
+    "backend": ["Spring Boot", "Spring Security", "JPA/Hibernate",
+      "MySQL", "PostgreSQL", "SQL Server", "Maven", "Swagger",
+      "JUnit5", "Mockito", "Lombok", "Redis", "Kafka (learning)"],
+    "infra_devops": ["Docker", "Docker Compose", "Linux VPS",
+      "AWS EC2/S3/VPC", "GitHub Actions", "Nginx", "Apache",
+      "Debian Server", "Ubuntu Server", "SSH"],
+    "networking": ["TCP/IP", "DNS", "DHCP", "Cisco Packet Tracer",
+      "Windows Server", "Active Directory", "LAN/WAN",
+      "Routing and Switching", "Virtualization"],
+    "architecture": ["Microservices", "REST APIs", "DDD",
+      "Layered/n-Tier", "JWT/OAuth2", "Kafka"],
+    "tools": ["Git", "GitHub", "IntelliJ", "Postman", "VS Code", "SSMS"]
+  },
+  "education": [
+    {
+      "degree": "Technical degree in Software Development (DAM)",
+      "school": "CPIFP Alan Turing, Málaga",
+      "status": "First year completed, currently on internship"
+    },
+    {
+      "degree": "Technical degree in IT Systems & Networking (SMR)",
+      "school": "CPIFP Alan Turing, Málaga",
+      "status": "Completed"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Altaid Formación",
+      "role": "e-learning content creator (internship)",
+      "type": "Remote",
+      "status": "Current"
+    }
+  ],
+  "projects": [
+    {
+      "name": "DM AI",
+      "description": "AI-powered Dungeon Master that generates interactive stories and adventures from user prompts. Bilingual EN/ES. Free alternative to Dungeon AI using the Gemini API.",
+      "stack": ["Java 21", "Spring Boot", "Gemini API", "REST API"],
+      "status": "wip",
+      "repo": null,
+      "demo": null
+    }
+  ]
+}

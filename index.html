@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nelson Filipe Fardilha Karlsson — Backend Developer based in Spain. Java, Spring Boot, REST APIs." />
+  <meta name="description" content="Backend developer based in Spain. Java, Spring Boot, REST APIs, Docker, AWS. Open to remote opportunities." />
   <meta name="robots" content="index, follow" />
-  <title>Nelson Filipe Fardilha Karlsson — Backend Developer</title>
-  <meta property="og:title" content="Nelson Filipe Fardilha Karlsson — Backend Developer" />
-  <meta property="og:description" content="Backend Developer based in Spain. Java, Spring Boot, REST APIs. Open to opportunities." />
+  <title>Nelson Karlsson — Junior Backend Developer | Java · Spring Boot · Remote</title>
+  <meta property="og:title" content="Nelson Karlsson — Backend Developer" />
+  <meta property="og:description" content="Java · Spring Boot · REST APIs. Open to remote work from Spain." />
   <meta property="og:url" content="https://nelsonffkarlsson.com" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://nelsonffkarlsson.com/recursos/img/k2_icon.png" />
@@ -73,9 +73,12 @@
           <div class="hero-left">
             <p class="hi" id="hi-text">// Hi, I'm Nelson</p>
             <h1>Nelson Filipe<br><em>Fardilha Karlsson.</em></h1>
+            <p class="status-available lang-en">&#9679; Available for remote work</p>
+            <p class="status-available lang-es hidden">&#9679; Disponible para trabajo remoto</p>
             <div class="hero-links">
               <a class="link-outline" href="https://github.com/NUXX-G" target="_blank" rel="noopener noreferrer">GITHUB</a>
               <a class="link-fill" href="https://www.linkedin.com/in/nelson-filipe-fardilha-karlsson-93078931b/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+              <a class="link-outline" href="/assets/cv/nelson-karlsson-cv.pdf" download target="_blank" rel="noopener noreferrer">CV</a>
             </div>
 
             <!-- FEATURED PROJECT CARD — your best project lives here -->
@@ -84,23 +87,22 @@
                 <div>
                   <p class="hero-project-label lang-en">Featured Project</p>
                   <p class="hero-project-label lang-es hidden">Proyecto Destacado</p>
-                  <p class="hero-project-name lang-en">Project Name</p>
-                  <p class="hero-project-name lang-es hidden">Nombre Proyecto</p>
+                  <p class="hero-project-name lang-en">DM AI</p>
+                  <p class="hero-project-name lang-es hidden">DM AI</p>
                 </div>
                 <p class="project-status lang-en">wip</p>
                 <p class="project-status lang-es hidden">en progreso</p>
               </div>
-              <p class="hero-project-desc lang-en">Short description of your featured project. What it does, why it matters, key tech decisions.</p>
-              <p class="hero-project-desc lang-es hidden">Descripción breve de tu proyecto destacado. Qué hace, por qué importa, decisiones técnicas clave.</p>
+              <p class="hero-project-desc lang-en">AI-powered Dungeon Master — generates interactive stories and adventures from your prompts. Bilingual (EN/ES). Built as a free alternative to Dungeon AI, powered by the Gemini API. Backend built with Java and Spring Boot.</p>
+              <p class="hero-project-desc lang-es hidden">Dungeon Master con IA — genera historias e aventuras interactivas a partir de tus ideas. Bilingüe (ES/EN). Alternativa gratuita a Dungeon AI, usando la API de Gemini. Backend construido con Java y Spring Boot.</p>
               <div class="project-tags">
                 <p class="ptag">Java 21</p>
                 <p class="ptag">Spring Boot</p>
+                <p class="ptag">Gemini API</p>
+                <p class="ptag">REST API</p>
               </div>
               <div class="project-btns">
-                <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
                 <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
-                <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
-                <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
               </div>
               <div class="hero-project-footer">
                 <a class="see-more-btn lang-en" onclick="goTo(1)">see more &#8595;</a>
@@ -113,16 +115,36 @@
 
           <div class="hero-right">
             <div class="hero-about lang-en">
-              <p>I'm a backend developer based in Spain, focused on Java and Spring Boot — REST APIs, layered architecture, security, persistence. Real projects I actually deploy and use, not tutorials I followed once and forgot.</p>
-              <p>My formation has two layers: I'm currently finishing a vocational degree in Software Development (DAM — a 2-year technical program equivalent to an associate's degree in software engineering), and before that I completed one in IT Systems &amp; Networking (SMR — covering networks, servers, and operating systems from the ground up). That systems background wasn't planned, but it stuck — and it gives me context I find genuinely useful when working close to infrastructure.</p>
-              <p>On the side I'm learning Rust — the way it handles memory and ownership is unlike anything else I've touched. That kind of challenge is what keeps me going.</p>
-              <p>I know what I want: to build things that matter and keep getting harder. That's what this is about.</p>
+              <p>Backend developer based in Spain — Java, Spring Boot, REST APIs, Spring Security, JPA/Hibernate, Docker, AWS. I build layered architectures with real security and persistence, and I deploy and self-host everything on my own VPS. Before software development I completed a technical degree in IT Systems &amp; Networking — networks, servers, Linux, infrastructure from scratch. That foundation shows up in how I work: I understand the full stack, not just the code. Open to remote opportunities.</p>
+              <div class="hero-chat lang-en">
+                <div class="chat-header">
+                  <span class="chat-header-title">NUXX-TERMINAL v1.0</span>
+                  <span class="chat-header-status">[ONLINE]</span>
+                </div>
+                <div class="chat-messages" id="chat-messages-en"></div>
+                <div class="chat-divider"></div>
+                <div class="chat-input-row">
+                  <span class="chat-prompt">&gt;</span>
+                  <input type="text" class="chat-input" id="chat-input-en" placeholder="ask me anything about Nelson" autocomplete="off" />
+                  <button class="chat-send" id="chat-send-en">&rarr;</button>
+                </div>
+              </div>
             </div>
             <div class="hero-about lang-es hidden">
-              <p>Soy un desarrollador backend con base en España, especializado en Java y Spring Boot — APIs REST, arquitectura en capas, seguridad, persistencia. Proyectos reales que despliego y uso yo mismo, no tutoriales que seguí una vez y olvidé.</p>
-              <p>Mi formación tiene dos capas: actualmente estoy terminando un grado superior en Desarrollo de Aplicaciones Multiplataforma (DAM — un programa técnico de 2 años equivalente a un grado asociado en ingeniería del software), y antes completé uno en Sistemas Microinformáticos y Redes (SMR — redes, servidores y sistemas operativos desde cero). Esa base en sistemas no estaba planeada, pero se quedó — y me da contexto que encuentro genuinamente útil cuando trabajo cerca de la infraestructura.</p>
-              <p>Por mi cuenta estoy aprendiendo Rust — la forma en que gestiona la memoria y el ownership no se parece a nada que haya tocado. Ese tipo de reto es lo que me mantiene.</p>
-              <p>Sé lo que quiero: construir cosas que importen y que sean cada vez más difíciles. De eso va esto.</p>
+              <p>Desarrollador backend en España — Java, Spring Boot, REST APIs, Spring Security, JPA/Hibernate, Docker, AWS. Construyo arquitecturas en capas con seguridad y persistencia reales, y despliego todo en mi propio VPS. Antes del desarrollo de software completé un grado técnico en Sistemas Microinformáticos y Redes — redes, servidores, Linux, infraestructura desde cero. Esa base se nota en cómo trabajo: entiendo la arquitectura completa, no solo el código. Disponible para trabajo remoto.</p>
+              <div class="hero-chat lang-es hidden">
+                <div class="chat-header">
+                  <span class="chat-header-title">NUXX-TERMINAL v1.0</span>
+                  <span class="chat-header-status">[ONLINE]</span>
+                </div>
+                <div class="chat-messages" id="chat-messages-es"></div>
+                <div class="chat-divider"></div>
+                <div class="chat-input-row">
+                  <span class="chat-prompt">&gt;</span>
+                  <input type="text" class="chat-input" id="chat-input-es" placeholder="pregúntame lo que quieras sobre Nelson" autocomplete="off" />
+                  <button class="chat-send" id="chat-send-es">&rarr;</button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -165,26 +187,26 @@
           <div class="project-featured-badge lang-es hidden">Destacado</div>
           <div class="project-image-wrap">
             <div class="project-image-placeholder">
-              <span class="lang-en">screenshot coming soon</span>
-              <span class="lang-es hidden">captura próximamente</span>
+              <span class="lang-en">DEMO / SCREENSHOT</span>
+              <span class="lang-es hidden">DEMO / CAPTURA</span>
             </div>
           </div>
           <div class="project-top">
-            <p class="project-name lang-en">Featured project</p>
-            <p class="project-name lang-es hidden">Proyecto destacado</p>
-            <p class="project-status">—</p>
+            <p class="project-name lang-en">DM AI</p>
+            <p class="project-name lang-es hidden">DM AI</p>
+            <p class="project-status lang-en">wip</p>
+            <p class="project-status lang-es hidden">en progreso</p>
           </div>
-          <p class="project-desc lang-en">Your featured project description goes here. Explain what it does and why it matters.</p>
-          <p class="project-desc lang-es hidden">La descripción de tu proyecto destacado va aquí. Explica qué hace y por qué es relevante.</p>
+          <p class="project-desc lang-en">AI-powered Dungeon Master — generates interactive stories and adventures from your prompts. Bilingual (EN/ES). Built as a free alternative to Dungeon AI, powered by the Gemini API. Backend built with Java and Spring Boot.</p>
+          <p class="project-desc lang-es hidden">Dungeon Master con IA — genera historias e aventuras interactivas a partir de tus ideas. Bilingüe (ES/EN). Alternativa gratuita a Dungeon AI, usando la API de Gemini. Backend construido con Java y Spring Boot.</p>
           <div class="project-tags">
-            <p class="ptag lang-en">tag</p>
-            <p class="ptag lang-es hidden">tag</p>
+            <p class="ptag">Java 21</p>
+            <p class="ptag">Spring Boot</p>
+            <p class="ptag">Gemini API</p>
+            <p class="ptag">REST API</p>
           </div>
           <div class="project-btns">
-            <a class="pbtn-demo" href="#" target="_blank">demo &#8599;</a>
             <a class="pbtn-repo" href="#" target="_blank">repo &#8599;</a>
-            <a class="pbtn-video lang-en" href="#" target="_blank">video &#8599;</a>
-            <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
           </div>
         </div>
 
@@ -203,8 +225,8 @@
               <p class="project-name lang-es hidden">Nombre proyecto</p>
               <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Brief description of this project.</p>
-            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
+            <p class="project-desc lang-en">What it does · Tech used · What makes it interesting</p>
+            <p class="project-desc lang-es hidden">Qué hace · Tecnologías · Qué lo hace interesante</p>
             <div class="project-tags">
               <p class="ptag lang-en">tag</p>
               <p class="ptag lang-es hidden">tag</p>
@@ -216,7 +238,6 @@
               <a class="pbtn-video lang-es hidden" href="#" target="_blank">video &#8599;</a>
             </div>
           </div>
-
           <div class="project" data-project="project-2">
             <div class="project-image-wrap small">
               <div class="project-image-placeholder">
@@ -229,8 +250,8 @@
               <p class="project-name lang-es hidden">Nombre proyecto</p>
               <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Brief description of this project.</p>
-            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
+            <p class="project-desc lang-en">What it does · Tech used · What makes it interesting</p>
+            <p class="project-desc lang-es hidden">Qué hace · Tecnologías · Qué lo hace interesante</p>
             <div class="project-tags">
               <p class="ptag lang-en">tag</p>
               <p class="ptag lang-es hidden">tag</p>
@@ -255,8 +276,8 @@
               <p class="project-name lang-es hidden">Nombre proyecto</p>
               <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Brief description of this project.</p>
-            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
+            <p class="project-desc lang-en">What it does · Tech used · What makes it interesting</p>
+            <p class="project-desc lang-es hidden">Qué hace · Tecnologías · Qué lo hace interesante</p>
             <div class="project-tags">
               <p class="ptag lang-en">tag</p>
               <p class="ptag lang-es hidden">tag</p>
@@ -281,8 +302,8 @@
               <p class="project-name lang-es hidden">Nombre proyecto</p>
               <p class="project-status">—</p>
             </div>
-            <p class="project-desc lang-en">Brief description of this project.</p>
-            <p class="project-desc lang-es hidden">Breve descripción de este proyecto.</p>
+            <p class="project-desc lang-en">What it does · Tech used · What makes it interesting</p>
+            <p class="project-desc lang-es hidden">Qué hace · Tecnologías · Qué lo hace interesante</p>
             <div class="project-tags">
               <p class="ptag lang-en">tag</p>
               <p class="ptag lang-es hidden">tag</p>
@@ -403,6 +424,11 @@
         </div>
         <p class="contact-availability lang-en">Open to backend opportunities in Spain or remote — available now.</p>
         <p class="contact-availability lang-es hidden">Abierto a oportunidades de backend en España o remoto — disponible ahora.</p>
+        <a class="contact-row" href="/assets/cv/nelson-karlsson-cv.pdf" download target="_blank">
+          <p>curriculum vitae</p>
+          <p class="contact-copy lang-en">download &#8595;</p>
+          <p class="contact-copy lang-es hidden">descargar &#8595;</p>
+        </a>
         <div class="contact-row contact-email" onclick="copyEmail()">
           <p>nelson@nelsonffkarlsson.com</p>
           <p class="contact-copy" id="copy-label">copy &#8599;</p>
@@ -415,8 +441,8 @@
           <p>linkedin · Nelson Filipe Fardilha Karlsson</p>
           <p class="contact-arrow">&#8599;</p>
         </a>
-        <p class="footer-note lang-en">2026 Nelson Filipe Fardilha Karlsson · open to opportunities · Spain or remote</p>
-        <p class="footer-note lang-es hidden">2026 Nelson Filipe Fardilha Karlsson · abierto a oportunidades · España o remoto</p>
+        <p class="footer-note lang-en">2026 Nelson Filipe Fardilha Karlsson · backend developer · open to remote</p>
+        <p class="footer-note lang-es hidden">2026 Nelson Filipe Fardilha Karlsson · desarrollador backend · abierto a remoto</p>
       </div>
     </section>
 

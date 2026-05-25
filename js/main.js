@@ -95,3 +95,146 @@ function fallbackCopy(text) {
 }
 
 updateVideoLinks('en');
+
+(function() {
+  var messagesEN = document.getElementById('chat-messages-en');
+  var messagesES = document.getElementById('chat-messages-es');
+  var inputEN = document.getElementById('chat-input-en');
+  var inputES = document.getElementById('chat-input-es');
+  var sendEN = document.getElementById('chat-send-en');
+  var sendES = document.getElementById('chat-send-es');
+
+  if (!messagesEN && !messagesES) return;
+
+  var INITIAL_EN = '> ask me anything about Nelson';
+  var INITIAL_ES = '> pregúntame lo que quieras sobre Nelson';
+  var THINKING_EN = '// thinking...';
+  var THINKING_ES = '// pensando...';
+  var ERROR_EN = '// connection error — try again';
+  var ERROR_ES = '// error de conexión — inténtalo de nuevo';
+
+  function getMessagesEl() {
+    return currentLang === 'es' ? messagesES : messagesEN;
+  }
+
+  function getInputEl() {
+    return currentLang === 'es' ? inputES : inputEN;
+  }
+
+  function getSendEl() {
+    return currentLang === 'es' ? sendES : sendEN;
+  }
+
+  function getInitial() {
+    return currentLang === 'es' ? INITIAL_ES : INITIAL_EN;
+  }
+
+  function getThinking() {
+    return currentLang === 'es' ? THINKING_ES : THINKING_EN;
+  }
+
+  function getError() {
+    return currentLang === 'es' ? ERROR_ES : ERROR_EN;
+  }
+
+  function setInitialMessages() {
+    [messagesEN, messagesES].forEach(function(el) {
+      if (el) el.innerHTML = '';
+    });
+    var msgEl = getMessagesEl();
+    if (msgEl) {
+      var div = document.createElement('div');
+      div.className = 'chat-msg-user';
+      div.innerHTML = getInitial() + '<span class="blink">_</span>';
+      msgEl.appendChild(div);
+    }
+  }
+
+  function scrollToBottom(el) {
+    if (el) el.scrollTop = el.scrollHeight;
+  }
+
+  function addUserMessage(text) {
+    var el = getMessagesEl();
+    if (!el) return;
+    var div = document.createElement('div');
+    div.className = 'chat-msg-user';
+    div.textContent = '> ' + text;
+    el.appendChild(div);
+    scrollToBottom(el);
+  }
+
+  function addLoading() {
+    var el = getMessagesEl();
+    if (!el) return;
+    var div = document.createElement('div');
+    div.className = 'chat-msg-loading';
+    div.textContent = getThinking();
+    el.appendChild(div);
+    scrollToBottom(el);
+    return div;
+  }
+
+  function replaceLoading(loadingEl, text, isError) {
+    if (!loadingEl) return;
+    loadingEl.className = isError ? 'chat-msg-error' : 'chat-msg-ai';
+    loadingEl.textContent = text;
+    var el = getMessagesEl();
+    scrollToBottom(el);
+  }
+
+  function sendMessage() {
+    var input = getInputEl();
+    var sendBtn = getSendEl();
+    if (!input) return;
+    var text = input.value.trim();
+    if (!text) return;
+
+    input.value = '';
+    input.disabled = true;
+    if (sendBtn) sendBtn.disabled = true;
+
+    addUserMessage(text);
+    var loadingEl = addLoading();
+
+    fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        replaceLoading(loadingEl, '// ' + (data.reply || ''), false);
+      })
+      .catch(function() {
+        replaceLoading(loadingEl, getError(), true);
+      })
+      .finally(function() {
+        input.disabled = false;
+        if (sendBtn) sendBtn.disabled = false;
+        input.focus();
+      });
+  }
+
+  // Event listeners
+  [inputEN, inputES].forEach(function(input) {
+    if (!input) return;
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') sendMessage();
+    });
+  });
+
+  [sendEN, sendES].forEach(function(btn) {
+    if (!btn) return;
+    btn.addEventListener('click', sendMessage);
+  });
+
+  setInitialMessages();
+
+  // Reset messages on language switch
+  var origSetLang = setLang;
+  window.setLang = function(lang) {
+    origSetLang(lang);
+    setInitialMessages();
+  };
+})();
